@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 3</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: #fff;
+            background-image: url(https://images.pexels.com/photos/313782/pexels-photo-313782.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        main {
+            margin-top: 60px;
+            background-color: #008000;
+            padding: 25px;  
+            border-radius: 20px;
+        }
+
+        h1 {
+            margin-top: 8%;
+            color: #000;
+        }
+
+        button {
+            width: 100%;
+            height: 30px;
+            background-color: #2f2f9b;
+            cursor: pointer;
+            border-radius: 5px;
+            border: none;
+            color: #fff;
+        }
+
+        button:hover {
+            background-color: #3939aa;
+            transition: 0.2s ease-in-out;
+            -webkit-box-shadow: 5px 2px 38px -11px #000000; 
+            box-shadow: 5px 2px 38px -11px #000000;
+        }
+    </style>
+</head>
+<body>
+  <h1>Cálculo de estoque</h1>
+    <main>
+        <label for="qtdMin">Quantidade mínima: </label><br>
+        <input type="number" id="qtdMin">
+
+        <br><br>
+
+        <label for="qtdMax">Quantidade máxima: </label><br>
+        <input type="number" id="qtdMax">
+
+        <br><br>
+
+        <button type="submit" onclick="calcular()">Calcular</button>
+
+        <br><br>
+        
+        <p>Estoque médio: <span id="result"></span></p>
+
+    </main>
+
+    <script>
+        function calcular() {
+            let qtdMin = document.getElementById('qtdMin').value;
+            let qtdMax = document.getElementById('qtdMax').value;
+
+            let calculo1 = parseInt(qtdMin) + parseInt(qtdMax);
+            let calculo2 = parseInt(calculo1) / 2;
+            document.getElementById('result').innerHTML = calculo2;
+        }
+    </script>
+</body>
+</html>
